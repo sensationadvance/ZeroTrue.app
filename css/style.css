@@ -1,45 +1,871 @@
-/* Reset & Base */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.6; color: #333; }
-a { text-decoration: none; color: inherit; }
+/* Reset & Base ... (Keep existing styles) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-/* Header */
-.site-header { display: flex; align-items: center; justify-content: space-between; padding: 1rem 2rem; background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: sticky; top: 0; }
-.logo { height: 40px; }
-.site-header nav a { margin-left: 1.5rem; font-weight: 500; }
-.site-header .cta { padding: 0.5rem 1rem; background: #007bff; color: #fff; border-radius: 4px; }
+body {
+  font-family: 'Roboto', sans-serif; /* Use Roboto font */
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
 
-/* Hero */
-.hero { text-align: center; padding: 4rem 2rem; background: #f5f8fa; }
-.hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-.hero p { margin-bottom: 1.5rem; color: #555; }
-.btn-primary { background: #007bff; color: #fff; padding: 0.75rem 1.5rem; border-radius: 4px; font-weight: 500; }
+a {
+  text-decoration: none;
+  color: #007bff; /* Consistent link color */
+  transition: color 0.3s ease;
+}
 
-/* Features */
-.features { padding: 3rem 2rem; }
-.features h2 { text-align: center; margin-bottom: 2rem; }
-.feature-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 1.5rem; }
-.feature { background: #fff; padding: 1.5rem; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); text-align: center; }
-.feature h3 { margin-bottom: 0.5rem; }
+a:hover {
+  color: #0056b3;
+}
 
-/* How It Works */
-.how-it-works { background: #fafafa; padding: 3rem 2rem; }
-.how-it-works h2 { text-align: center; margin-bottom: 1.5rem; }
-.how-it-works ol { max-width: 600px; margin: 0 auto; list-style-position: inside; }
-.how-it-works li { margin-bottom: 1rem; }
+img {
+    max-width: 100%;
+    height: auto;
+}
 
-/* Benefits */
-.benefits { padding: 3rem 2rem; }
-.benefits h2 { text-align: center; margin-bottom: 1.5rem; }
-.benefits ul { max-width: 600px; margin: 0 auto; list-style: square inside; }
-.benefits li { margin-bottom: 0.75rem; }
+/* Container for width control */
+.container {
+  width: 90%; /* Responsive width */
+  max-width: 1100px; /* Max width limit (adjust as needed) */
+  margin: 0 auto; /* Center the container */
+  padding: 0 1rem; /* Add some padding */
+}
 
-/* Contact */
-.contact { text-align: center; padding: 3rem 2rem; background: #f5f8fa; }
-.signup-form { display: inline-flex; gap: 0.5rem; margin-top: 1rem; }
-.signup-form input { padding: 0.75rem 1rem; border: 1px solid #ccc; border-radius: 4px; width: 200px; }
-.btn-secondary { background: transparent; border: 2px solid #007bff; padding: 0.75rem 1.5rem; border-radius: 4px; color: #007bff; font-weight: 500; }
+/* Header ... (Keep existing styles) */
+.site-header {
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0.8rem 0;
+}
 
-/* Footer */
-.site-footer { text-align: center; padding: 1.5rem 2rem; font-size: 0.9rem; color: #666; }
-.site-footer a { color: #007bff; margin: 0 0.5rem; }
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+   /* Use the main container settings */
+   width: 90%;
+   max-width: 1100px;
+   margin: 0 auto;
+   padding: 0 1rem;
+}
+
+.logo {
+  height: 45px; /* Slightly larger logo */
+}
+
+.site-header nav {
+  display: flex;
+  align-items: center;
+}
+
+.site-header nav a {
+  margin-left: 1.5rem; /* Adjust spacing if needed */
+  font-weight: 500;
+  color: #333;
+  padding-bottom: 5px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease;
+  font-size: 0.95rem; /* Slightly smaller font for more links */
+}
+
+.site-header nav a:hover {
+  color: #007bff;
+  border-bottom-color: #007bff;
+}
+
+.site-header .cta {
+  padding: 0.6rem 1.2rem;
+  background: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  border-bottom: none; /* Remove hover border for CTA */
+}
+.site-header .cta:hover {
+   background: #0056b3;
+   color: #fff;
+   border-bottom: none;
+}
+
+
+/* Mobile Nav Toggle - Basic */
+.mobile-nav-toggle {
+    display: none; /* Hidden by default */
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+}
+
+
+/* Main Content Area ... (Keep existing styles) */
+.main-content {
+  padding-top: 2rem; /* Add padding below sticky header */
+}
+
+/* Sections ... (Keep existing styles) */
+.content-section {
+  padding: 4rem 0; /* Consistent vertical padding */
+}
+
+.bg-light {
+  background-color: #f8f9fa; /* Light background for alternating sections */
+}
+.bg-gray-100 { background-color: #f1f1f1; }
+.bg-blue-50 { background-color: #e7f1ff; }
+.bg-red-50 { background-color: #fbebe C; }
+.bg-green-50 { background-color: #e6f7ec; }
+.bg-purple-50 { background-color: #f3e7ff; }
+.bg-yellow-50 { background-color: #fff8e1; }
+
+
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.section-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto 2.5rem auto;
+}
+
+/* Hero Section ... (Keep existing styles) */
+.hero {
+  text-align: center;
+  padding: 5rem 0;
+  background: linear-gradient(rgba(0, 123, 255, 0.05), rgba(0, 123, 255, 0)), #fff; /* Subtle gradient */
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #003d7e;
+}
+
+.hero .subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #444;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Buttons ... (Keep existing styles) */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background: #007bff;
+  color: #fff;
+}
+.btn-primary:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+  background: #6c757d;
+  color: #fff;
+}
+.btn-secondary:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Card Styling ... (Keep existing styles) */
+.card {
+  background: #fff;
+  padding: 1.8rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1.5rem; /* Default bottom margin */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%; /* Make cards in grids equal height */
+  display: flex;
+  flex-direction: column;
+}
+/* Remove margin from last card in a direct container if needed */
+.card:last-child {
+    /* margin-bottom: 0; */ /* Reconsider this based on layout */
+}
+
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.card-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #0056b3; /* Use a consistent blue for titles */
+    display: flex; /* Align icon and title */
+    align-items: center;
+}
+.card-title .icon {
+    margin-right: 0.75rem;
+    font-size: 1.5rem; /* Slightly smaller icon in title */
+    margin-bottom: 0; /* Reset margin */
+}
+
+
+.card .icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #007bff; /* Default icon color */
+}
+
+.text-blue { color: #007bff !important; } /* Use important if needed for override */
+.text-red { color: #dc3545 !important; }
+.text-green { color: #28a745 !important; }
+.text-purple { color: #6f42c1 !important; }
+.text-yellow { color: #ffc107 !important; }
+.text-gray { color: #6c757d !important; }
+
+
+/* Market Stats Section (#problem) ... (Keep existing styles) */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+.stat-card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    border-left: 4px solid #007bff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07);
+    margin-bottom: 0; /* Remove bottom margin for grid items */
+}
+.stat-card .icon {
+    font-size: 2.5rem;
+    color: #007bff;
+    margin-bottom: 0.8rem;
+}
+.stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0056b3;
+    margin-bottom: 0.2rem;
+}
+.stat-label {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+.stat-source {
+    font-size: 0.8rem;
+    color: #888;
+}
+.key-findings {
+    background-color: #e7f1ff; /* Light blue background */
+    border-left: 4px solid #007bff;
+}
+.key-findings ul {
+    list-style: none; /* Remove default bullets */
+    padding-left: 0;
+}
+.key-findings li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.8rem; /* More space for icon */
+    position: relative;
+}
+.key-findings li::before {
+    content: "\f00c"; /* Font Awesome check icon */
+    font-family: "Font Awesome 6 Free"; /* Correct family name */
+    font-weight: 900;
+    color: #007bff;
+    position: absolute;
+    left: 0;
+    top: 4px; /* Adjust vertical alignment */
+    font-size: 0.9rem;
+}
+
+
+/* Services Section (#services) ... (Keep existing styles) */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.8rem;
+}
+.feature-card {
+    text-align: center;
+    margin-bottom: 0; /* Remove bottom margin for grid items */
+}
+.feature-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    color: #333;
+}
+
+
+/* How It Works Section (#workflow) ... (Keep existing styles) */
+.workflow-steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the top */
+    gap: 1.5rem;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+.step {
+    flex: 1;
+    min-width: 180px; /* Minimum width for each step */
+    text-align: center;
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.07);
+    position: relative;
+    margin-bottom: 1rem; /* Space for wrapping */
+}
+.step-number {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #007bff;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.step .icon {
+    font-size: 2.5rem;
+    color: #007bff;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem; /* Space below number */
+}
+.step h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+.step-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #adb5bd;
+    padding-top: 4rem; /* Align arrow vertically */
+}
+
+
+/* NEW: Challenges Section (#challenges) */
+.challenges-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Default single column */
+    gap: 2rem;
+}
+@media (min-width: 992px) {
+    .challenges-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on larger screens */
+    }
+}
+.challenge-details .card, .challenge-list .card {
+    margin-bottom: 1.5rem; /* Ensure spacing between cards in the same column */
+}
+.challenge-list .card:last-child {
+    margin-bottom: 0; /* Remove margin for last item in list */
+}
+.chart-container {
+    position: relative;
+    height: 250px; /* Adjust height as needed */
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.chart-caption {
+    font-size: 0.85rem;
+    color: #666;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+.progress-bars {
+    margin-top: 1rem;
+    space-y: 1rem;
+}
+.progress-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.8rem;
+}
+.progress-item span:first-child {
+    width: 80px; /* Fixed width for labels */
+    font-size: 0.9rem;
+}
+.progress-bar-outer {
+    flex-grow: 1;
+    background-color: #e9ecef;
+    border-radius: 10px;
+    height: 10px;
+    overflow: hidden;
+}
+.progress-bar-inner {
+    background-color: #007bff;
+    height: 100%;
+    border-radius: 10px;
+}
+.progress-item .percent {
+    font-weight: 600;
+    font-size: 0.9rem;
+    width: 35px; /* Fixed width for percentage */
+    text-align: right;
+}
+.styled-list {
+    list-style: none;
+    padding-left: 0;
+}
+.styled-list li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.8rem;
+    position: relative;
+    font-size: 0.95rem;
+    color: #444;
+}
+.styled-list li::before {
+    content: "\f111"; /* Font Awesome circle icon (default) */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900; /* Use solid icons */
+    color: #007bff; /* Default color */
+    position: absolute;
+    left: 0;
+    top: 5px;
+    font-size: 0.6rem; /* Smaller icon */
+}
+.challenge-card {
+    border-left: 4px solid #007bff; /* Blue border for challenge cards */
+    margin-bottom: 0; /* Remove bottom margin for grid items */
+}
+.critical-gaps {
+    border-left: 4px solid #dc3545;
+}
+.critical-gaps .card-title .icon { color: #dc3545; }
+.gap-metrics {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin-top: 1rem;
+}
+.gap-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #dc3545;
+}
+.gap-label {
+    font-size: 0.9rem;
+    color: #555;
+}
+.gap-note {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+
+/* Fraud Risks Section (#fraud-risks) ... (Keep existing styles) */
+.risk-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+.risk-card {
+    border-left: 4px solid #dc3545; /* Red border for risks */
+    margin-bottom: 0; /* Remove bottom margin for grid items */
+}
+.risk-card .icon {
+    color: #dc3545; /* Red icon */
+}
+.risk-card h3 {
+    color: #a71d2a; /* Darker red for title */
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+}
+
+
+/* Advantages Section (#features) ... (Keep existing styles) */
+.advantages-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+.advantage-item {
+    display: flex;
+    align-items: flex-start; /* Align icon top */
+    gap: 1rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+}
+.advantage-item .icon {
+    font-size: 1.8rem;
+    margin-top: 3px; /* Align icon slightly */
+}
+.advantage-item h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    color: #333;
+}
+
+
+/* Benefits Section (#benefits) ... (Keep existing styles) */
+.benefit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.8rem;
+}
+.benefit-card {
+    text-align: center;
+    margin-bottom: 0; /* Remove bottom margin for grid items */
+}
+.benefit-card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #17a2b8; /* Teal color for benefits */
+}
+.benefit-card h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    color: #117a8b; /* Darker teal */
+}
+
+/* Regulation Section (#regulation) ... (Keep existing styles) */
+.regulation-content {
+    display: grid;
+    grid-template-columns: 1fr; /* Default to single column */
+    gap: 2rem;
+}
+@media (min-width: 768px) {
+    .regulation-content {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on larger screens */
+    }
+}
+
+.regulation-card {
+    border-left: 4px solid #007bff;
+    margin-bottom: 0; /* Remove bottom margin for grid items */
+}
+.regulation-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+.regulation-card li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.8rem; /* More space for icon */
+    position: relative;
+}
+.regulation-card li::before {
+    content: "\f105"; /* Font Awesome chevron right */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: #007bff;
+    position: absolute;
+    left: 0;
+    top: 4px;
+    font-size: 1rem;
+}
+/* Highlight compliance challenges */
+.regulation-card h3 i.text-red { margin-right: 0.5rem;}
+
+
+/* NEW: Outlook Section (#outlook) */
+.outlook-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Default single column */
+    gap: 2rem;
+}
+@media (min-width: 992px) {
+    .outlook-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on larger screens */
+    }
+}
+.outlook-chart-stats .card, .outlook-details .card {
+     margin-bottom: 1.5rem; /* Spacing between cards */
+}
+.outlook-details .card:last-child {
+    margin-bottom: 0;
+}
+.outlook-stats {
+    grid-template-columns: repeat(2, 1fr); /* 2x2 grid for stats */
+    gap: 1rem;
+}
+.stat-card-mini {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 6px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.stat-card-mini .stat-value { font-size: 1.5rem; margin-bottom: 0; }
+.stat-card-mini .stat-label { font-size: 0.85rem; color: #666; margin-bottom: 0; line-height: 1.2; }
+
+.projection-card {
+    border-left: 4px solid #007bff; /* Blue border */
+}
+.projection-card .card-title .icon { color: #007bff; }
+
+/* Style list icons based on card context */
+.styled-list.icon-green li::before { color: #28a745; }
+.styled-list.icon-yellow li::before { color: #ffc107; content: "\f06a"; } /* Exclamation circle */
+.styled-list.icon-yellow li { font-weight: 500; } /* Slightly bolder text for challenges */
+
+/* NEW: Recommendations Section (#recommendations) */
+.recommendations-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Default single column */
+    gap: 2rem;
+}
+@media (min-width: 992px) {
+    .recommendations-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns */
+    }
+}
+.recommendation-column .card {
+    margin-bottom: 1.5rem; /* Space between cards in a column */
+}
+.recommendation-column .card:last-child {
+    margin-bottom: 0;
+}
+.recommendation-card {
+    border-left: 4px solid #007bff; /* Default blue */
+}
+.recommendation-card.bg-green-50 { border-left-color: #28a745; }
+.recommendation-card.bg-purple-50 { border-left-color: #6f42c1; }
+
+/* Override default list icon based on class */
+.styled-list.check-icon li::before { content: "\f00c"; font-size: 0.9rem; top: 4px;} /* Check */
+.styled-list.arrow-icon li::before { content: "\f061"; } /* Arrow right */
+.styled-list.gavel-icon li::before { content: "\f0e3"; } /* Gavel */
+
+.implementation-timeline h4, .success-metrics h4 {
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+    color: #555;
+}
+.timeline-item {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    border-left: 2px solid #007bff;
+}
+.timeline-item span {
+    font-weight: 500;
+    color: #0056b3;
+    margin-right: 0.5rem;
+}
+.success-metrics { margin-top: 1.5rem; }
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    text-align: center;
+}
+.metric-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+.metric-label {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+
+/* Signup / CTA Section (#signup) ... (Keep existing styles) */
+.cta-section {
+    background-color: #0056b3; /* Darker blue background */
+    color: #fff;
+    padding: 4rem 0;
+}
+.cta-section h2 {
+    color: #fff;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+.cta-section p {
+    color: #e0e0e0;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.signup-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+.signup-form input[type="email"] {
+    padding: 0.9rem 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    min-width: 250px; /* Minimum width for email input */
+    font-size: 1rem;
+}
+.signup-form .btn-secondary {
+    background: #ffc107; /* Yellow button for contrast */
+    color: #333;
+    border: none;
+}
+.signup-form .btn-secondary:hover {
+    background: #e0a800;
+    color: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Footer ... (Keep existing styles) */
+.site-footer {
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 0.9rem;
+  color: #666;
+  background-color: #f1f1f1;
+  margin-top: 3rem; /* Space above footer */
+}
+.site-footer .container {
+    /* Container styles already applied */
+}
+
+.site-footer a {
+  color: #007bff;
+  margin: 0 0.5rem;
+}
+.site-footer a:hover {
+    text-decoration: underline;
+}
+.social-links {
+    margin-top: 1rem;
+}
+.social-links a {
+    font-size: 1.4rem;
+    margin: 0 0.8rem;
+    color: #555;
+}
+.social-links a:hover {
+    color: #007bff;
+}
+
+/* Responsive Adjustments ... (Keep existing styles and add if needed) */
+@media (max-width: 992px) {
+    .container {
+        width: 95%;
+    }
+    .hero h1 { font-size: 2.5rem; }
+    .hero .subtitle { font-size: 1.1rem; }
+    .section-title { font-size: 2rem; }
+    .workflow-steps { flex-direction: column; align-items: stretch; }
+    .step-arrow { display: none; } /* Hide arrows in column layout */
+    .step { margin-bottom: 2rem; } /* Add more space between steps */
+
+    .outlook-stats { grid-template-columns: repeat(2, 1fr); } /* Keep stats 2x2 */
+}
+
+@media (max-width: 768px) {
+     /* Mobile Navigation */
+    .site-header nav {
+        display: none; /* Hide nav by default */
+        flex-direction: column;
+        position: absolute;
+        top: 65px; /* Adjust based on header height */
+        left: 0;
+        width: 100%;
+        background: #fff;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        padding: 1rem 0;
+    }
+     .site-header nav.active {
+        display: flex; /* Show when active */
+    }
+     .site-header nav a {
+        margin: 0.5rem 1rem; /* Adjust spacing for vertical layout */
+        text-align: center;
+        border-bottom: 1px solid #eee; /* Separator */
+        padding: 0.8rem;
+        font-size: 1rem; /* Restore font size */
+     }
+    .site-header nav a:hover {
+        background-color: #f8f9fa;
+        border-bottom-color: #eee; /* Keep separator on hover */
+    }
+    .site-header .cta { margin: 1rem; background-color: #007bff;}
+
+
+    .mobile-nav-toggle {
+        display: block; /* Show hamburger icon */
+    }
+
+    .hero h1 { font-size: 2rem; }
+    .hero .subtitle { font-size: 1rem; }
+    .section-title { font-size: 1.8rem; }
+    .content-section { padding: 3rem 0; }
+
+    .stats-grid,
+    .feature-grid,
+    .risk-grid,
+    .advantages-list,
+    .benefit-grid,
+    .challenges-grid, /* Add new grids */
+    .outlook-grid,
+    .recommendations-grid {
+        grid-template-columns: 1fr; /* Stack grids into single column */
+        gap: 1.5rem;
+    }
+    .outlook-stats { grid-template-columns: repeat(2, 1fr); } /* Keep stats 2x2 */
+    .metrics-grid { grid-template-columns: repeat(2, 1fr); } /* Keep metrics 2x1 */
+
+    .signup-form {
+        flex-direction: column;
+        align-items: stretch; /* Make items full width */
+    }
+     .signup-form input[type="email"] {
+        width: 100%;
+        min-width: auto;
+    }
+    .signup-form button {
+        width: 100%;
+    }
+}
