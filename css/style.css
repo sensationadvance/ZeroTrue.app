@@ -209,7 +209,6 @@ img {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   margin-bottom: 1.5rem; /* Default bottom margin */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 100%; /* Make cards in grids equal height */
   display: flex;
   flex-direction: column;
 }
