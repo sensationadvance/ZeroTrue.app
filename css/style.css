@@ -115,6 +115,7 @@ img {
 /* Sections ... (Keep existing styles) */
 .content-section {
   padding: 4rem 0; /* Consistent vertical padding */
+  overflow: hidden;
 }
 
 .bg-light {
