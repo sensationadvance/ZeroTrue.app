@@ -106,6 +106,33 @@ img {
     color: #333;
 }
 
+.report-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+.report-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.report-card .icon {
+    font-size: 2rem;
+    color: #007BFF;
+    margin-bottom: 0.5rem;
+}
+.report-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
 
 /* Main Content Area ... (Keep existing styles) */
 .main-content {
